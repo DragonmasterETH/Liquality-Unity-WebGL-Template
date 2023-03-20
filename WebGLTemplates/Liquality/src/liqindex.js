@@ -37,8 +37,8 @@ async function getNFTs(wallet, chain)
     return(JSON.stringify(nfts));
 }
 
-async function mintERC721Nft(contractAddress, recipient, id, amount, chainId, pk) {
-    const hash = await NftService.mintERC721Token({contractAddress, recipient, id, amount: +amount}, chainId, pk);
+async function mintERC721Nft(contractAddress, recipient, uri, chainId, pk) {
+    const hash = await NftService.mintERC721Token({contractAddress, recipient, uri}, chainId, pk);
     return(hash);
 }
 
@@ -53,8 +53,8 @@ async function createERC1155Collection(uri, chainId, pk) {
     return(hash);
   }
 
-async function createERC721Collection(uri, chainId, pk) {
-    const hash = await NftService.createERC721Collection({uri}, chainId, pk);
+async function createERC721Collection(tokenName, tokenSymbol, chainId, pk) {
+    const hash = await NftService.createERC721Collection({tokenName, tokenSymbol}, chainId, pk);
     return(hash);
   }
 
