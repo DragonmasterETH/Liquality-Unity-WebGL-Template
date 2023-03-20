@@ -7,16 +7,16 @@ mergeInto(LibraryManager.library, {
         let resp = await getNFTs(wallet, chain);
         SendMessage('Liquality', 'GetNFTs', resp);
     },
-    Mint721: async function (contractAddress, recipient, id, amount, chainId, pk) {
-        let resp = await mintERC721Nft(contractAddress, recipient, id, amount, chainId, pk);
+    Mint721: async function (contractAddress, recipient, uri, chainId, pk) {
+        let resp = await mintERC721Nft(contractAddress, recipient, uri, chainId, pk);
         SendMessage('Liquality', 'MintERC721Hash', resp);
     },
     Mint1155: async function (contractAddress, recipient, id, amount, chainId, pk) {
         let resp = await mintERC1155Nft(contractAddress, recipient, id, amount, chainId, pk);
         SendMessage('Liquality', 'MintERC1155Hash', resp);
     },
-    Create721: async function (uri, chain, pk) {
-        let resp = await createERC721Collection(uri, chain, pk);
+    Create721: async function (tokenName, tokenSymbol, chain, pk) {
+        let resp = await createERC721Collection(tokenName, tokenSymbol, chain, pk);
         SendMessage('Liquality', 'CreateERC721Hash', resp);
     },
     Create1155: async function (uri, chain, pk) {
